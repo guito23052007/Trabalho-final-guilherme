@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +16,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Carrinho;
+import model.bean.historico_Pedido;
 import model.dao.CarrinhoDAO;
+import model.dao.histroricoDAO;
 
 /**
  *
@@ -88,9 +91,28 @@ public class checkoutController extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+      protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        // Extrai dados do formulário enviado
+        String nomeProduto = request.getParameter("nome");
+        float valorProduto = Float.parseFloat(request.getParameter("valor"));
+        String imagemProduto = request.getParameter("imagem");
+        int idUsuario = getIdUsuarioFromCookie(request);
+
+        // Cria o objeto historico_Pedido com os dados do produto
+        historico_Pedido historicoUser = new historico_Pedido();
+        historicoUser.setNome_produto(nomeProduto);
+        historicoUser.setValor_produto(valorProduto);
+        historicoUser.setImagem_produto(imagemProduto);
+        historicoUser.setIdUsuario(idUsuario);
+        historicoUser.setDatahora(LocalDateTime.now());
+
+        // Chama o método para inserir o histórico na base de dados
+        histroricoDAO historicoDAO = new histroricoDAO();
+        historicoDAO.inserirHistorico(historicoUser);
+
+        // Redireciona ou encaminha para a página de histórico de pedidos do usuário
+        response.sendRedirect("historicoPedidoUser");
     }
 
     /**
