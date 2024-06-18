@@ -1,0 +1,213 @@
+body {
+    background-color: #171717 !important;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header .bg-light {
+    background-color: #1F242F !important;
+}
+
+header .bg-body {
+    background-color: #171717 !important;
+    margin-top: 50px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+.bg-body a {
+    color: white;
+}
+
+.container-fluid input {
+    width: 200px;
+    margin-left: 20%;
+    background-color: #3E3838 !important;
+    border-radius: 20px;
+    border: none;
+}
+
+.container-fluid .pesquisa {
+    margin-left: -2.1%;
+    background-color: rgba(19, 19, 19, 0);
+    color: black;
+    border: none;
+}
+
+.container {
+    width: 1300px;;
+    height: 100vh;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Adicionado para o contexto de posicionamento da imagem de fundo */
+}
+
+.fund{
+    height: 93vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+}
+.produto {
+    background-color: #1c1c1cd9;
+    padding: 20px;
+    width: 100%;
+    height: 820px;;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    margin-top: -825px;
+}
+
+.image-container {
+    position: relative;
+    width: 600px; /* Define a largura fixa */
+    height: 300px; /* Define a altura fixa */
+}
+
+.main-image {
+    width: 800px;
+    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+    margin-top: -150px;
+}
+
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+    height: 100px; /* Define uma altura menor para as miniaturas */
+}
+
+.imagemP img {
+    margin-left: 850px;
+    width: 380px;
+    height: 151px;
+    margin-top: 128px;
+}
+.thumbnail {
+    width: 112px;
+    height: 65px; 
+    cursor: pointer;
+    margin: 0 5px;
+    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
+}
+
+.thumbnail:hover {
+    opacity: 0.7;
+}
+
+.produto h2 {
+    margin: 0;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    top: 114px;
+}
+.price {
+    font-size: 1.5em;
+    color: #00b894;
+}
+
+.description {
+    margin: 20px 0;
+}
+
+
+.valor {
+     margin-top: 170px;
+     margin-left: 970px;
+}
+p {
+    position: absolute;
+        color: white;
+
+}
+ 
+.description iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+}
+#preco {
+    margin-top: -15px;
+    margin-left: 851px;
+    width: 376px;
+    font-size: 15px;
+}
+.btn-comprar {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    margin-top: 232px;
+    margin-left: 72%;
+    width: 300px;
+}
+
+.btn-comprar i {
+    margin-right: 10px;
+}
+
+.btn-comprar:hover {
+    background-color: green;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .produto {
+        padding: 10px;
+    }
+
+    .produto h2 {
+        font-size: 1.5em;
+    }
+
+    .price {
+        font-size: 1.2em;
+    }
+
+    .btn-comprar {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+    }
+
+    .main-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .thumbnails {
+        height: auto;
+    }
+
+    .thumbnail {
+        width: 70px;
+        height: 70px;
+    }
+}

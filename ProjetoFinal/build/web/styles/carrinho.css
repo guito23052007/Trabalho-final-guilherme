@@ -1,0 +1,75 @@
+body {
+    background-color: #171717;
+    margin: 0;
+    padding: 0;
+}
+
+.botao-comprar {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer; 
+    margin-top: 20px; 
+}
+
+.botao-comprar:hover {
+    background-color: #45a049;
+}
+
+.bg-light {
+    background-color: #1F242F !important;
+}
+
+.container .produto {
+    background-color: #242222;
+    width: 90%;
+    margin-top: 5px;
+    height: auto;
+    overflow-x: auto;
+    border-bottom: 0.4px solid white;
+    display: flex;
+}
+
+.produto img {
+    width: 107px;
+    height: 70px;
+    margin: 25px 10px;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.produto h2 {
+    color: white;
+    font-size: 20px;
+    margin-top: 35px;
+}
+
+.produto p {
+    color: white;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.pagamento {
+    width: 350px;
+    height: 400px;
+    background-color:  #242222;
+    margin: 50px auto;
+    text-align: center;
+}

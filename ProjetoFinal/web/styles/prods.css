@@ -1,0 +1,193 @@
+
+body{
+    background-color: #171717 !important;
+}
+main {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #181717;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+header .bg-light{
+    background-color: #1F242F !important;
+       
+}
+header .bg-body {
+    background-color: #171717 !important;  
+     margin-top: 50px;
+}
+header a{
+    color: white;
+    text-decoration: none;
+}
+
+.bg-body a{
+    color: white;
+}
+
+.container-fluid input{
+    width: 200px;
+    margin-left: 20%;
+    background-color:  #3E3838 !important;
+    border-radius: 20px;
+    border: none;
+
+}
+.container-fluid .pesquisa {
+    margin-left: -2.1%;
+    background-color: rgba(19, 19, 19, 0);
+    color: black;
+    border: none;
+
+}
+.categoria {
+    display: inline-block;
+    margin-right: 10px;
+}
+.position-relative {
+    position: relative;
+    width: 90%;
+    margin: auto;
+    overflow: hidden;
+    background-color:  #171717;
+    padding: 20px;
+    border-radius: 10px;
+  
+}
+.horizontal-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.horizontal-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.card {
+    flex: 0 0 auto;
+    width: calc(25% - 15px); /* Show 4 cards with some margin */
+    margin-right: 15px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    padding: 15px;
+    box-sizing: border-box;
+    
+}
+.card .card-body img {
+    width: 100%;
+    height: 240px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.horizontal-scroll-container .card-body:hover {
+    transform: scale(1.05);
+}
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 1000;
+    border-radius: 50%;
+    font-size: 18px;
+}
+#scrollLeft {
+    left: 10px;
+    background-color: #171717;
+}
+#scrollRight {
+    right: 10px;
+    background-color: #171717;
+}
+
+.scroll-button i {
+    pointer-events: none;
+    
+}
+
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os produtos */
+    padding: 20px;
+    margin-top: 150px;
+
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color:  rgba(19, 19, 19, 0) !important; /* Fundo branco */
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.card-body  {
+    padding: 15px;
+    color: white;
+}
+.product-container .card .card-body img {
+    width: 100%;
+    height: 340px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.product-image {
+    width: 100%;
+    height: 400px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: green;
+    border: none;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background-color: darkgreen;
+}
+
+.categoria-text {
+    color: #00C2FF;
+}
+.card-body img {
+    height: 350px;
+}
