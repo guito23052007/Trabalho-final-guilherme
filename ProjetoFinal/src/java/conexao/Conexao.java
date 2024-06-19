@@ -13,9 +13,9 @@ import java.sql.DriverManager;
  * @author Senai
  */
 public class Conexao {
-      public static final String url = "jdbc:mysql://db4free.net:3306/guitlherme23?useSSL=false";
-    public static final String user = "guitoplineo";
-    public static final String senha = "guito23052007";
+      public static final String url = "jdbc:mysql://localhost:3306/Projeto_FF?useSSL=false";
+    public static final String user = "root";
+    public static final String senha = "1234";
     public static final String driver = "com.mysql.cj.jdbc.Driver";
     public static Connection conectar() {
         Connection con = null;

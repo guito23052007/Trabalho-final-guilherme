@@ -25,20 +25,21 @@
     </head>
     <body>
         <jsp:include page="header.jsp"></jsp:include>
-            <main class="main-content">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 order-md-2 mb-4">
-                            <ul class="list-group carrinho-list">
-                            <c:forEach items="${carrinho}" var="carrinho">
-                                <div id="${carrinho.idProdutos}" class="produto">
-                                    <img src="${carrinho.imagemCarrinho}" alt="${nomeCarrinho}">
-                                    <h2>${carrinho.nomeCarrinho}</h2>
-                                    <p id="p1" class="preco">Preço : R$ ${carrinho.precoCarrinho}</p>
-
+        <main class="main-content">
+            <div class="container">
+                <div class="row">
+                    <!-- Lista de produtos do carrinho -->
+                    <div class="col-md-4 order-md-2 mb-4">
+                        <ul class="list-group carrinho-list">
+                            <c:forEach items="${carrinho}" var="item">
+                                <div id="${item.idProdutos}" class="produto">
+                                    <img src="${item.imagemCarrinho}" alt="${item.nomeCarrinho}">
+                                    <h2>${item.nomeCarrinho}</h2>
+                                    <p class="preco">Preço: R$ ${item.precoCarrinho}</p>
                                 </div>
                             </c:forEach>
-                            <c:forEach items="${totalPreco}" var="totalPreco">
+                            <!-- Exibir o total do carrinho -->
+                             <c:forEach items="${totalPreco}" var="totalPreco">
                                 <div class="content">
                                     <h2 class="text">Preço Total:</h2>
                                     <p class="preco" id="preco">R$ ${totalPreco.total}</p>
@@ -46,74 +47,25 @@
                             </c:forEach>    
                         </ul>
                     </div>
+                    <!-- Formulário de pagamento -->
                     <div class="col-md-8 order-md-1">
-                        <form id="form-checkout" action="enviarFor" method="post" enctype="multipart/form-data">
+                        <form id="form-pagamento" action="checkoutController" method="post">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="firstName">Nome</label>
-                                    <input required type="text" class="form-control" id="firstName" name="nome" placeholder="">
+                                    <label for="nome">Nome</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="lastName">Sobrenome</label>
-                                    <input required type="text" class="form-control" id="lastName" name="sobrenome" placeholder="">
+                                    <label for="sobrenome">Sobrenome</label>
+                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="username">Email</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">@</span>
-                                    </div>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="d-block my-3">
-                                <div class="custom-control custom-radio">
-                                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                                    <label class="custom-control-label" for="credit">Cartão de Crédito</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                    <label class="custom-control-label" for="debit">Cartão de Débito</label>
-                                </div>
-                                <div class="custom-control custom-radio">
-                                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                                    <label class="custom-control-label" for="paypal">PayPal</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="cc-name">Nome do Cartão</label>
-                                    <input type="text" class="form-control" id="cc-name" placeholder="" pattern="[A-Za-z]+" title="Por favor, insira apenas letras" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="cc-number">Número do Cartão</label>
-                                    <input type="text" class="form-control" id="cc-number" placeholder="" minlength="16" maxlength="16" required>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-3 mb-3">
-                                    <label for="cc-expiration">Expiração (MM/AA)</label>
-                                    <input type="text" class="form-control" id="cc-expiration" placeholder="MM/AA" maxlength="5" required pattern="^(0[1-9]|1[0-2])\/(2[4-9]|[3-9][0-9])$">
-                                </div>
-                                <div class="col-md-3 mb-3">
-                                    <label for="cc-cvv">CVV</label>
-                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" maxlength="3" title="Por favor, apenas números" required pattern="[0-9]{3,4}">
-                                </div>
-                            </div>
-
-
+                           
+                            <hr class="mb-4">
+                            <button class="btn btn-primary btn-lg btn-block" type="submit">Finalizar Compra</button>
                         </form>
-                        <form id="form-comprar" action="checkoutController" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="nome" id="nome">
-                            <input type="hidden" name="valor" id="valor">
-                            <input type="hidden" name="imagem" id="imagem">
-                            <input type="submit" class="btn-comprar" id="comprarBtn" value="Comprar">
-                        </form>
-
                     </div>
                 </div>
-                    historicoPedidoUser
             </div>
         </main>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.umd.min.js"></script>
