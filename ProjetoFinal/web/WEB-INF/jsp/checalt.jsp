@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP8rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/b321e58993.js" crossorigin="anonymous"></script>
         <!-- Font Awesome -->
@@ -25,50 +25,45 @@
     </head>
     <body>
         <jsp:include page="header.jsp"></jsp:include>
-        <main class="main-content">
-            <div class="container">
-                <div class="row">
-                    <!-- Lista de produtos do carrinho -->
-                    <div class="col-md-4 order-md-2 mb-4">
-                        <ul class="list-group carrinho-list">
-                            <c:forEach items="${carrinho}" var="item">
-                                <div id="${item.idProdutos}" class="produto">
-                                    <img src="${item.imagemCarrinho}" alt="${item.nomeCarrinho}">
-                                    <h2>${item.nomeCarrinho}</h2>
-                                    <p class="preco">Preço: R$ ${item.precoCarrinho}</p>
+            <main class="main-content">
+                <div class="container">
+                    <div class="row">
+                        <!-- Lista de produtos do carrinho -->
+                        <div class="col-md-4 order-md-2 mb-4">
+                            <ul class="list-group carrinho-list">
+                                <c:forEach items="${carrinho}" var="item">
+                                    <div id="${item.idProdutos}" class="produto">
+                                        <img src="${item.imagemCarrinho}" alt="${item.nomeCarrinho}">
+                                        <h2>${item.nomeCarrinho}</h2>
+                                        <p class="preco">Preço: R$ ${item.precoCarrinho}</p>
+                                    </div>
+                                </c:forEach>
+                                <!-- Exibir o total do carrinho -->
+                                <c:forEach items="${totalPreco}" var="totalPreco">
+                                    <div class="content">
+                                        <h2 class="text">Preço Total:</h2>
+                                        <p class="preco" id="preco">R$ ${totalPreco.total}</p>
+                                    </div>
+                                </c:forEach>
+                            </ul>
+                        </div>
+                        <div class="col-md-8 order-md-1">
+                            <form action="checkout" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="nome_sobrenome">Nome e Sobrenome:</label>
+                                    <input type="text" class="form-control" id="nome_sobrenome" name="nome_sobrenome" required>
                                 </div>
-                            </c:forEach>
-                            <!-- Exibir o total do carrinho -->
-                             <c:forEach items="${totalPreco}" var="totalPreco">
-                                <div class="content">
-                                    <h2 class="text">Preço Total:</h2>
-                                    <p class="preco" id="preco">R$ ${totalPreco.total}</p>
+                                <div class="form-group">
+                                    <label for="tipo_pagamento">Tipo de Pagamento:</label>
+                                    <input type="text" class="form-control" id="tipo_pagamento" name="tipo_pagamento" required>
                                 </div>
-                            </c:forEach>    
-                        </ul>
-                    </div>
-                    <!-- Formulário de pagamento -->
-                    <div class="col-md-8 order-md-1">
-                        <form id="form-pagamento" action="checkoutController" method="post">
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="nome">Nome</label>
-                                    <input type="text" class="form-control" id="nome" name="nome" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="sobrenome">Sobrenome</label>
-                                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
-                                </div>
-                            </div>
-                           
-                            <hr class="mb-4">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit">Finalizar Compra</button>
-                        </form>
+                                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.umd.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </body>
+            </main>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.0/mdb.umd.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        </body>
 </html>

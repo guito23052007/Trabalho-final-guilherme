@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.bean;
 
-/**
- *
- * @author Edson
- */
 public class Pagamento {
 
     private int id_forma_pagamento;
@@ -57,6 +48,4 @@ public class Pagamento {
     public void setTipo_pagamento(String tipo_pagamento) {
         this.tipo_pagamento = tipo_pagamento;
     }
-
-
 }

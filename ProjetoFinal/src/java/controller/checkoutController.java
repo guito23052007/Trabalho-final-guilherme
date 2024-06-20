@@ -1,8 +1,7 @@
 package controller;
 
+import static conexao.Conexao.url;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.time.LocalDateTime;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,14 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.Carrinho;
-import model.bean.Pagamento; // Certifique-se de importar a classe Pagamento corretamente
+import model.bean.Pagamento;
 import model.dao.CarrinhoDAO;
 import model.dao.PagamentoDAO;
 
-/**
- *
- * @author Edson
- */
 public class checkoutController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -47,27 +42,26 @@ public class checkoutController extends HttpServlet {
         processRequest(request, response);
     }
 
-    @Override
+    @Override 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String nome_sobrenome = request.getParameter("nome_sobrenome");
-      
+        
+        if (url.equals("/checkout")) {
+            Pagamento user = new Pagamento();
+            user.setNome_sobrenome(request.getParameter("nome"));
+            user.setTipo_pagamento(request.getParameter("senha"));
+            
 
-        // Criar objeto de pagamento
-        Pagamento pagamento = new Pagamento();
-        pagamento.setId_usuario(getIdUsuarioFromCookie(request));
-        pagamento.setNome_sobrenome(nome_sobrenome);
+            PagamentoDAO userD = new PagamentoDAO();
+              userD.checalt(user);
 
-        // Inserir pagamento no banco de dados
-        PagamentoDAO pagamentoDAO = new PagamentoDAO();
-        pagamentoDAO.pagamento(pagamento);
-
-        // Redirecionar para página de histórico de pedidos do usuário
-        response.sendRedirect("historicoPedidoUser");
+        response.sendRedirect("./historicoPedidoUser");
+        } 
+        
     }
 
     private int getIdUsuarioFromCookie(HttpServletRequest request) {
-        int idUsuario = -1;
+        int idUsuario = -1; // Valor padrão, caso não seja possível extrair o ID do usuário do cookie
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
@@ -76,9 +70,9 @@ public class checkoutController extends HttpServlet {
                     try {
                         idUsuario = Integer.parseInt(cookieValue);
                     } catch (NumberFormatException e) {
-                        e.printStackTrace();
+                        e.printStackTrace(); // ou outro tratamento de erro, se desejado
                     }
-                    break;
+                    break; // Encerra o loop assim que encontrar o cookie desejado
                 }
             }
         }

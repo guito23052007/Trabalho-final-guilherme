@@ -39,7 +39,7 @@ body {
     margin-bottom: 20px;
     margin-top: -150px;
     position: absolute;
-    top: -200px;
+    top: -180px;
     left: 150px;
 }
 
@@ -108,7 +108,9 @@ main {
 
 .menu{
     margin-left: -90%;
-    margin-top: -840px;
+    margin-top: -794px;
+    border: none !important;
+    border-bottom: none;
     
 }
 .btn-primary {

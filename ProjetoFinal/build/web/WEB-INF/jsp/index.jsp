@@ -12,7 +12,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-
+   
         <div class="banner">
 
 
@@ -53,26 +53,8 @@
                 <div class="u"><a href="./home"><button>Descubra mais</button></a></div>
             </div>
         </div>
-        <main>
-            <div class="container">
-        <div class="item">
-            <img src="assets/nintendo.png" alt="">
-          <a href="./buscar-produtos?cat=2&busca="><button>Descubra mais</button></a>
-        </div>
-        <div class="item">
-            <img src="assets/minecraft.png" alt="">
-            <a href="./buscar-produtos?cat=1&busca="><button>Descubra mais</button></a>
-        </div>
-        <div class="item">
-            <img src="assets/assasine.png" alt="">
-             <a href="./buscar-produtos?cat=3&busca="><button>Descubra mais</button></a>
-        </div>
-        <div class="item">
-            <img src="assets/destaques.png" alt="">
-             <a href="./buscar-produtos?cat=4&busca="><button>Descubra mais</button></a>
-        </div>
-    </div>
-        </main>
+       
+        
         <script src="https://kit.fontawesome.com/ffe7fbbd06.js" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
