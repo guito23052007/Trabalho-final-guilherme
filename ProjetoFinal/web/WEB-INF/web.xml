@@ -52,6 +52,18 @@
         <servlet-name>historicoPedidoUser</servlet-name>
         <servlet-class>controller.historicoPedidoUser</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NintendoController</servlet-name>
+        <servlet-class>controller.NintendoController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Nintendos</servlet-name>
+        <servlet-class>controller.Nintendos</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ObrigController</servlet-name>
+        <servlet-class>controller.ObrigController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.htm</url-pattern>
@@ -111,6 +123,18 @@
     <servlet-mapping>
         <servlet-name>historicoPedidoUser</servlet-name>
         <url-pattern>/historicoPedidoUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NintendoController</servlet-name>
+        <url-pattern>/Nintendo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Nintendos</servlet-name>
+        <url-pattern>/Nintendos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ObrigController</servlet-name>
+        <url-pattern>/ObrigController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

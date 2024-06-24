@@ -22,7 +22,7 @@ public class HistoricoPedidos extends HttpServlet {
         histroricoDAO historicoDAO = new histroricoDAO();
         List<historico_Pedido> pedidos = historicoDAO.historico();
         
-        // Enviando a lista de pedidos para a página JSP
+        // lista os produtos no jsp
         request.setAttribute("pedidos", pedidos);
         
         
@@ -30,7 +30,7 @@ public class HistoricoPedidos extends HttpServlet {
         List<historico_Pedido> total = historicoDAO.Total();
         request.setAttribute("total", total);
         
-        // Encaminhando para a página JSP
+       
         String nextPage = "/WEB-INF/jsp/historicoPedios.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
         dispatcher.forward(request, response);

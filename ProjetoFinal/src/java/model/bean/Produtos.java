@@ -25,6 +25,8 @@ public class Produtos {
     private String imagem6;
     private String imagem7;
     private String imagem8;
+    
+    
     private String nome_categoria;
 
     public Produtos() {

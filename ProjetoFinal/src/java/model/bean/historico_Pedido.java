@@ -18,19 +18,23 @@ public class historico_Pedido {
     private String imagem_produto;
     private float valor_produto;
     private int idUsuario;
+     private String nome_user;
+      private String forma_pagamento;
     private LocalDateTime datahora;
     private float total;
 
     public historico_Pedido() {
     }
 
-    public historico_Pedido(int id_pedido, int usuario, String nome_produto, String imagem_produto, float valor_produto, int idUsuario, LocalDateTime datahora, float total) {
+    public historico_Pedido(int id_pedido, int usuario, String nome_produto, String imagem_produto, float valor_produto, int idUsuario, String nome_user, String forma_pagamento, LocalDateTime datahora, float total) {
         this.id_pedido = id_pedido;
         this.usuario = usuario;
         this.nome_produto = nome_produto;
         this.imagem_produto = imagem_produto;
         this.valor_produto = valor_produto;
         this.idUsuario = idUsuario;
+        this.nome_user = nome_user;
+        this.forma_pagamento = forma_pagamento;
         this.datahora = datahora;
         this.total = total;
     }
@@ -83,6 +87,22 @@ public class historico_Pedido {
         this.idUsuario = idUsuario;
     }
 
+    public String getNome_user() {
+        return nome_user;
+    }
+
+    public void setNome_user(String nome_user) {
+        this.nome_user = nome_user;
+    }
+
+    public String getForma_pagamento() {
+        return forma_pagamento;
+    }
+
+    public void setForma_pagamento(String forma_pagamento) {
+        this.forma_pagamento = forma_pagamento;
+    }
+
     public LocalDateTime getDatahora() {
         return datahora;
     }
@@ -98,6 +118,7 @@ public class historico_Pedido {
     public void setTotal(float total) {
         this.total = total;
     }
+
 
  
 }

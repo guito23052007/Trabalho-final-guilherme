@@ -97,7 +97,7 @@
                        <p class="valor">R$ ${produto.valor} </p>
 
                         <button type="submit" class="btn-comprar" idProduto="${produto.idProduto}" nome="${produto.nome}" valor="${produto.valor}" imagem="${produto.imagem}" quantidade="1" id="comprar">
-                            <i class="fa-solid fa-basket-shopping"></i> Comprar
+                            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Comprar
                         </button>
                     </div>
                 </c:forEach>

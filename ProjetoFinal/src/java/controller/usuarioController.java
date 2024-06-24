@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.bean.Usuarios;
 import model.dao.UsuariosDAO;
 
-@WebServlet(name = "usuarioController", urlPatterns = {"/cadastrar-usuario", "/login", "/cadastro-usuario", "/logar"})
+@WebServlet(name = "usuarioController", urlPatterns = {"/cadastrar-usuario", "/login", "/cadastro-usuario", "/logar", "/deletar-usuario"})
 public class usuarioController extends HttpServlet {
     UsuariosDAO userDao = new UsuariosDAO();
 
@@ -37,6 +37,10 @@ public class usuarioController extends HttpServlet {
                 }
             }
             dispatcher.forward(request, response);
+        } else if (url.equals("/deletar-usuario")) {
+            int userId = Integer.parseInt(request.getParameter("id"));
+            userDao.deletarUsuario(userId);
+            response.sendRedirect("./HistoricoUser");
         }
     }
 
@@ -73,7 +77,7 @@ public class usuarioController extends HttpServlet {
             if (user.getId_usuario() > 0) {
                 // Set cookies for login persistence using user ID
                 Cookie userCookie = new Cookie("userId", String.valueOf(user.getId_usuario()));
-                userCookie.setMaxAge(60 * 60 * 24 * 7); // 7 days
+                
                 response.addCookie(userCookie);
 
                 if (user.getStatus() == 2) {

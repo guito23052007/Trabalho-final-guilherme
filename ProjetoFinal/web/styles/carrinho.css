@@ -2,74 +2,93 @@ body {
     background-color: #171717;
     margin: 0;
     padding: 0;
+    font-family: Arial, sans-serif;
+    color: white;
 }
-
-.botao-comprar {
-    background-color: #4CAF50; 
-    color: white; 
-    padding: 10px 20px; 
-    text-align: center; 
-    text-decoration: none; 
-    display: inline-block; 
-    font-size: 16px; 
-    border-radius: 5px; 
-    border: none; 
-    cursor: pointer; 
-    margin-top: 20px; 
-}
-
-.botao-comprar:hover {
-    background-color: #45a049;
-}
-
 .bg-light {
-    background-color: #1F242F !important;
+    background-color: #1717171 !important;
 }
-
-.container .produto {
-    background-color: #242222;
-    width: 90%;
-    margin-top: 5px;
-    height: auto;
-    overflow-x: auto;
-    border-bottom: 0.4px solid white;
-    display: flex;
-}
-
-.produto img {
-    width: 107px;
-    height: 70px;
-    margin: 25px 10px;
-}
-
 .container {
+    width: 90%;
+    max-width: 100%;
     margin: 0 auto;
-    max-width: 1200px;
     padding: 0 20px;
 }
 
+.produto {
+    background-color: #242222;
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.produto img {
+    width: 100px;
+    height: auto;
+    margin-right: 20px;
+}
+
 .produto h2 {
-    color: white;
-    font-size: 20px;
-    margin-top: 35px;
+    font-size: 1.5rem;
+    margin: 0;
+    flex: 1;
 }
 
 .produto p {
-    color: white;
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 h1 {
     color: white;
     text-align: center;
     margin-top: 50px;
+    font-size: 2rem;
 }
 
 .pagamento {
-    width: 350px;
-    height: 400px;
-    background-color:  #242222;
+    width: 100%;
+    max-width: 350px;
     margin: 50px auto;
+    padding: 20px;
+    background-color: #242222;
     text-align: center;
+}
+
+.botao-comprar {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.botao-comprar:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .produto {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .produto img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .pagamento {
+        width: 100%;
+        max-width: 100%;
+    }
 }

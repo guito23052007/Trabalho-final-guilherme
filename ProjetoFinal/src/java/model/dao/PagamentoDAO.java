@@ -11,8 +11,10 @@ public class PagamentoDAO {
         try {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
-
-            stmt = conexao.prepareStatement("INSERT INTO pagamentos (id_usuario, nome_sobrenome, tipo_pagamento) VALUES (?, ?, ?)");
+           
+            
+            stmt = conexao.prepareStatement("INSERT INTO formas_pagamento (id_usuario, nome_sobrenome, tipo_pagamento) VALUES (?, ?, ?)");
+           
             stmt.setInt(1, p.getId_usuario());
             stmt.setString(2, p.getNome_sobrenome());
             stmt.setString(3, p.getTipo_pagamento());

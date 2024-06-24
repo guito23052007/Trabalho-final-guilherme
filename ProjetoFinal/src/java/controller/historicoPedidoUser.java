@@ -47,7 +47,7 @@ public class historicoPedidoUser extends HttpServlet {
     }
 
     private int getIdUsuarioFromCookie(HttpServletRequest request) {
-        int idUsuario = -1; // Valor padrão, caso não seja possível extrair o ID do usuário do cookie
+        int idUsuario = -1; 
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
@@ -56,10 +56,10 @@ public class historicoPedidoUser extends HttpServlet {
                     try {
                         idUsuario = Integer.parseInt(cookieValue);
                     } catch (NumberFormatException e) {
-                        // Em caso de falha na conversão, o idUsuario permanecerá como -1
-                        e.printStackTrace(); // ou outro tratamento de erro, se desejado
+                        
+                        e.printStackTrace(); 
                     }
-                    break; // Encerra o loop assim que encontrar o cookie desejado
+                    break; 
                 }
             }
         }
@@ -68,6 +68,6 @@ public class historicoPedidoUser extends HttpServlet {
 
     @Override
     public String getServletInfo() {
-        return "Servlet para exibir histórico de pedidos do usuário";
+        return "Servlet";
     }
 }

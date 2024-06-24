@@ -1,0 +1,178 @@
+/* Estilos gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa; /* Cor de fundo suave */
+    color: #495057; /* Cor do texto principal */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o cabeçalho */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 0;
+}
+
+header .navbar {
+    padding: 0 20px;
+}
+
+header .navbar .logo img {
+    height: 40px;
+}
+
+header .navbar .carrinho, 
+header .navbar .perfil {
+    margin-left: 15px;
+}
+
+header .navbar .navbar-nav .nav-link {
+    color: white;
+    margin-left: 10px;
+}
+
+header .navbar .navbar-nav .nav-link:hover {
+    color: #ffc107; /* Cor amarela ao passar o mouse */
+}
+
+/* Estilo para o conteúdo principal */
+.main-content {
+    margin-top: 20px;
+    background-color: #ffffff; /* Fundo branco */
+    padding: 20px;
+    border: 1px solid #dee2e6; /* Borda suave */
+    border-radius: 5px; /* Cantos arredondados */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Estilo para os campos de formulário */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #343a40;
+}
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="password"]:focus, 
+select:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+/* Estilos para os botões de rádio (métodos de pagamento) */
+.custom-control {
+    margin-bottom: 10px;
+}
+
+.custom-control-label::before,
+.custom-control-input:checked~.custom-control-label::before {
+    background-color: #007bff; /* Cor do indicador de seleção (azul) */
+    border-color: #007bff; /* Cor da borda do indicador */
+}
+
+.custom-control-input:focus~.custom-control-label::before {
+    box-shadow: 0 0 0 1px #007bff, 0 0 0 0.2rem rgba(0,123,255,0.25); /* Efeito de foco */
+}
+
+/* Estilo para o campo de email */
+#email {
+    margin-bottom: 20px;
+}
+
+/* Estilo para os campos do cartão de crédito */
+#cc-name, #cc-number, #cc-expiration, #cc-cvv {
+    margin-bottom: 10px;
+    width: 100%; /* Preenchimento total do contêiner */
+}
+
+/* Estilo para o botão de cadastro */
+.btn-primary {
+    margin-top: 20px;
+    background-color: #28a745; /* Cor de fundo verde */
+    border-color: #28a745; /* Cor da borda verde */
+}
+
+.btn-primary:hover {
+    background-color: #218838; /* Cor de fundo verde escuro ao passar o mouse */
+    border-color: #1e7e34; /* Cor da borda correspondente */
+}
+
+.btn-primary:focus, .btn-primary.focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); /* Efeito de foco */
+}
+
+/* Estilo para os itens do carrinho */
+.carrinho-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.carrinho-list .produto {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.carrinho-list .produto img {
+    max-width: 50px;
+    margin-right: 15px;
+}
+
+.carrinho-list .produto h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #343a40;
+}
+
+.carrinho-list .produto .preco {
+    margin-left: auto;
+    font-weight: bold;
+    color: #28a745;
+}
+
+.carrinho-list .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.carrinho-list .content .text {
+    font-weight: bold;
+    color: #343a40;
+}
+
+.carrinho-list .content .preco {
+    font-weight: bold;
+    color: #28a745;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 992px) {
+    .main-content {
+        padding: 10px;
+    }
+    #cc-name, #cc-number, #cc-expiration, #cc-cvv {
+        margin-bottom: 10px;
+    }
+}

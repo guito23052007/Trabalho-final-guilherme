@@ -2,6 +2,26 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/controller/checkoutController.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/model/dao/ProdutosDAO.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/js/carrinho.js</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/controller/usuarioController.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/controller/ProdutoUncioController.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/model/dao/PagamentoDAO.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/WEB-INF/jsp/Home.jsp</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/styles/unico.css</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/js/js.js</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/js/produtoUnico.js</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/styles/prods.css</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/conexao/Conexao.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/model/dao/CarrinhoDAO.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/WEB-INF/jsp/carrinho.jsp</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/styles/home.css</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/js/cardsHome.js</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/web/WEB-INF/jsp/produtoUnico.jsp</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/controller/ProdutosController.java</file>
+            <file>file:/C:/Users/Senai/Desktop/Trabalho-final-guilherme/ProjetoFinal/src/java/model/dao/CategoriasDAO.java</file>
+        </group>
     </open-files>
 </project-private>

@@ -1,13 +1,13 @@
-document.getElementById('scrollLeft').addEventListener('click', function() {
-    document.getElementById('carousel').scrollBy({
-        left: -220, // Ajuste o valor de acordo com a largura dos cartões e o espaço entre eles
-        behavior: 'smooth'
-    });
-});
+document.addEventListener('DOMContentLoaded', function () {
+    const scrollContainer = document.getElementById('carousel');
+    const scrollLeftButton = document.getElementById('scrollLeft');
+    const scrollRightButton = document.getElementById('scrollRight');
 
-document.getElementById('scrollRight').addEventListener('click', function() {
-    document.getElementById('carousel').scrollBy({
-        left: 720, // Ajuste o valor de acordo com a largura dos cartões e o espaço entre eles
-        behavior: 'smooth'
+    scrollLeftButton.addEventListener('click', function () {
+        scrollContainer.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    scrollRightButton.addEventListener('click', function () {
+        scrollContainer.scrollBy({ left: 300, behavior: 'smooth' });
     });
 });

@@ -27,19 +27,28 @@
                     <img src="${carrinho.imagemCarrinho}" alt="${nomeCarrinho}">
                     <h2>${carrinho.nomeCarrinho}</h2>
                     <p id="p1" class="preco">Preço : R$ ${carrinho.precoCarrinho}</p>
-                    
+                    <form action="${pageContext.request.contextPath}/deletar-produto" method="post">
+                        <input type="hidden" name="idCarrinho" value="${carrinho.idCarrinho}">
+                        <button type="submit" class="btn-delete">Deletar</button>
+                    </form>
+
+
+
                 </div>
             </c:forEach>
-                
-                <c:forEach items="${totalPreco}" var="totalPreco">
-                    <div class="content">
-                        <h2 class="text">Preço Total:</h2>
-                        <p class="preco" id="preco">R$ ${totalPreco.total}</p>
-                    </div>
-                </c:forEach>       
+            
+
         </div>
         <div class="pagamento">
-            <a href="./checkout" class="botao-comprar">Comprar</a></div>
+             <c:forEach items="${totalPreco}" var="totalPreco">
+                <div class="content">
+                    <h2 class="text">Preço Total:</h2>
+                    <p class="preco" id="preco">R$ ${totalPreco.total}</p>
+                </div>
+            </c:forEach>   
+            <a href="./checkout" class="botao-comprar">Comprar</a>
+
+        </div>
     </main>
 
 

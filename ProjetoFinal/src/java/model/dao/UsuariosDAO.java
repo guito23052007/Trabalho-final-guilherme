@@ -100,6 +100,16 @@ public class UsuariosDAO {
 
         return produtos;
     }
-
-    
+public void deletarUsuario(int idUsuario) {
+    try {
+        Connection conexao = Conexao.conectar();
+        PreparedStatement stmt = conexao.prepareStatement("DELETE FROM usuarios WHERE id_usuario = ?");
+        stmt.setInt(1, idUsuario);
+        stmt.executeUpdate();
+        stmt.close();
+        conexao.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
 }

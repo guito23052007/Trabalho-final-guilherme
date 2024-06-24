@@ -116,5 +116,18 @@ public class CarrinhoDAO {
      }  
         return Carrinho;
     }
+    public void deletarProduto(int idCarrinho) {
+    try {
+        Connection conexao = Conexao.conectar();
+        PreparedStatement stmt = conexao.prepareStatement("DELETE FROM carrinho WHERE idCarrinho = ?");
+        stmt.setInt(1, idCarrinho);
+        stmt.executeUpdate();
+        stmt.close();
+        conexao.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
 }
  

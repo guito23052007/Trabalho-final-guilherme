@@ -16,13 +16,13 @@ import model.bean.Produtos;
 import model.dao.CarrinhoDAO;
 import model.dao.ProdutosDAO;
 
-@WebServlet(urlPatterns = "/carrinho")
+@WebServlet(urlPatterns = {"/carrinho", "/deletar-produto"})
 @MultipartConfig
 public class ProdutoUncioController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Obtém o ID do produto a partir dos parâmetros da requisição
+
         int id = Integer.parseInt(request.getParameter("id"));
 
         // Busca o produto pelo ID
@@ -32,30 +32,19 @@ public class ProdutoUncioController extends HttpServlet {
 
         // Obtém o ID do usuário a partir do cookie
         int idUsuario = getIdUsuarioFromCookie(request);
-        
+
         // Verifica se o ID do usuário foi encontrado nos cookies
         if (idUsuario != -1) {
-            // Use o idUsuario para listar o carrinho
+
             CarrinhoDAO carrinhoDAO = new CarrinhoDAO();
             List<Carrinho> carrinho = carrinhoDAO.leia(idUsuario);
             request.setAttribute("carrinho", carrinho);
 
-            // Calcula o total de preço do carrinho
-             List<Carrinho> totalPreco = carrinhoDAO.leiaTotal(idUsuario);
+            List<Carrinho> totalPreco = carrinhoDAO.leiaTotal(idUsuario);
             request.setAttribute("totalPreco", totalPreco);
-            
-            
-        } 
-        
-        
-        
-        else {
-            // Caso o ID do usuário não seja encontrado nos cookies, redireciona para o login
-            response.sendRedirect("./login");
-            return; // Retorna para evitar o encaminhamento para a página de produto único
+
         }
 
-        // Encaminha para a página de produto único
         String url = "/WEB-INF/jsp/produtoUnico.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(url);
         dispatcher.forward(request, response);
@@ -70,6 +59,20 @@ public class ProdutoUncioController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        String url = request.getServletPath();
+
+        if (url.equals("/deletar-produto")) {
+            int idCarrinho = Integer.parseInt(request.getParameter("idCarrinho"));
+            CarrinhoDAO carrinhoDAO = new CarrinhoDAO();
+            carrinhoDAO.deletarProduto(idCarrinho);
+            PrintWriter sout = response.getWriter();
+           
+            // Após deletar o produto, redirecionar de volta para a página do carrinho
+            response.sendRedirect(request.getContextPath() + "/carrinhos");
+            return; // Importante retornar para encerrar o método após o redirecionamento
+        }
+
         String action = request.getServletPath();
         if (action.equals("/carrinho")) {
             produto(request, response);
@@ -101,9 +104,6 @@ public class ProdutoUncioController extends HttpServlet {
 
             // Redireciona de volta para a página de onde veio
             response.sendRedirect("./home");
-        } else {
-            // Caso o ID do usuário não seja encontrado nos cookies, redireciona para o login
-            response.sendRedirect("./login");
         }
     }
 

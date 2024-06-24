@@ -38,6 +38,8 @@ public class histroricoDAO {
                 cro.setNome_produto(rs.getString("nome_produto"));
                 cro.setImagem_produto(rs.getString("imagem"));
                 cro.setValor_produto(rs.getFloat("valor"));
+                cro.setForma_pagamento(rs.getString("Forma_pagamento"));
+                  cro.setNome_user(rs.getString("nome_user"));
 
                 cro.setIdUsuario(rs.getInt("idUsuario"));
                 LocalDateTime datahora = rs.getTimestamp("datahora").toLocalDateTime();
@@ -81,8 +83,6 @@ public class histroricoDAO {
         return carrinho;
     }
 
-  
-    
     public void inserirHistorico(historico_Pedido historicoUser) {
         try {
             Connection conexao = Conexao.conectar();
@@ -104,10 +104,6 @@ public class histroricoDAO {
             e.printStackTrace();
         }
     }
-    
-    // Outros métodos do DAO aqui
-
-
 
     public List<historico_Pedido> historicoUser(int idUsuario) {
         List<historico_Pedido> carrinho = new ArrayList<>();
@@ -126,6 +122,8 @@ public class histroricoDAO {
                 cro.setNome_produto(rs.getString("nome_produto"));
                 cro.setImagem_produto(rs.getString("imagem"));
                 cro.setValor_produto(rs.getFloat("valor"));
+                cro.setForma_pagamento(rs.getString("Forma_pagamento"));
+
                 cro.setDatahora(rs.getTimestamp("dataHora").toLocalDateTime());
                 cro.setIdUsuario(rs.getInt("idusuario"));
                 carrinho.add(cro);

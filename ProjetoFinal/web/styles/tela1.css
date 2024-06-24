@@ -13,7 +13,11 @@ body {
     align-items: center;
     overflow: hidden;
 }
-
+img, svg {
+    vertical-align: middle;
+    margin-left: -25%;
+    width: 187%;
+}
 .banner video {
     position: absolute;
     top: 0;
@@ -24,127 +28,78 @@ body {
     z-index: -1;
 }
 
-.banner .content {
+.menu {
     position: absolute;
-    top: 50%;
+    top: 20px;
+    left: 20px;
+}
+
+.menu .btn-primary {
+    background-color: transparent;
+    border: none;
+}
+
+.menu .offcanvas {
+    background-color: #1f1f1f; /* Cor de fundo do offcanvas */
+    color: white;
+}
+
+.menu .offcanvas-body {
+    padding: 1rem;
+}
+
+.content {
+    position: absolute;
+    top: -14px;
+    height: 883px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    width: 87%;
+    transform: translateX(-50%);
+    text-align: left;
     color: whitesmoke;
 }
-
-.banner img {
-    max-width: 70%;
+.content .logo {
+    width: 200px; 
     height: auto;
     margin-bottom: 20px;
-    margin-top: -150px;
-    position: absolute;
-    top: -180px;
-    left: 150px;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+}
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    margin-top: 262px;
+}
+.content .button {
+    margin-top: 20px;
 }
 
-.banner h1 {
-    font-size: 5rem;
-    margin: 0 0 20px 0;
-    font-family: "Holtwood One SC", serif;
-    -webkit-text-stroke: 0.3px black;
-    -webkit-text-fill-color: whitesmoke;
-    text-align: left;
-    margin-left: -97%;
-}
-
-.u button {
+.content .button button {
     background-color: transparent;
     border: 2px solid white;
     width: 130px;
     height: 40px;
     color: whitesmoke;
-    margin-top: 20px;
-    margin-left: -1500px;
-}
-
-main {
-    padding: 20px;
-}
-
-
-.container .item {
-    position: relative;
-    flex: 1 1 calc(50% - 40px); 
-    max-width: calc(40% - 40px);
-    box-sizing: border-box;
-    text-align: center;
-    overflow: hidden;
-}
-
-.container .item img {
-    width: 90%;
-    height: auto;
-    transition: transform 0.3s ease;
-    border-radius: 6%;
-}
-
-.container .item img:hover {
-    transform: scale(1.05);
-}
-
-.container .item button {
-    position: absolute;
-    bottom: 10px;
-    left: 70px;  
-    background-color: rgba(20, 127, 134, 0.8);
-    color: white;
-    border: 2px solid #147F86;
-    border-radius: 10px; 
-    padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 170px; 
 }
 
-.container .item button:hover {
-    background-color: rgba(20, 127, 134, 1);
+.content .button button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
-.menu{
-    margin-left: -90%;
-    margin-top: -794px;
-    border: none !important;
-    border-bottom: none;
+@media (max-width: 992px) {
+    .content .logo {
+        width: 150px; /* Reduzi o tamanho da imagem para telas menores */
+    }
     
-}
-.btn-primary {
-    bs-btn-color: #fffafa00  !important; 
-    background-color: #fffafa00 !important;
-    border-radius: white !important;
-
-}
-
-
-
-
-@media (max-width: 1100px) {
-    .banner h1 {
-        font-size: 2rem;
+    .content h1 {
+        font-size: 2.5rem; /* Reduzi ainda mais o tamanho da fonte para telas menores */
     }
-
-    .u button {
-        width: 100px;
-        height: 35px;
-    }
-
-    .container .item {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
-}
-@media (max-width: 1400px) {
-    .banner h1 {
-        font-size: 3rem;
-    }
-     .u button {
+    
+    .content .button button {
         width: 120px;
         height: 35px;
-         margin-left: -860px;
     }
 }

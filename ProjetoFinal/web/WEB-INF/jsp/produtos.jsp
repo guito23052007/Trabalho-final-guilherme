@@ -10,110 +10,117 @@
         <title>Produtos</title>
     </head>
     <body>
-       <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
-            <div class="container-fluid">
-                <a class="navbar-brand" href="./home"><i class="fa-solid fa-house"></i></a>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex" action="buscar-produtos" method="get">
-                      
-                      
-                        <a href="./carrinhos"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
-                    </form>
-                    <div class="logo"><img src="assets/logo.png" alt="png"></div>
-                </div>
-            </div>
-            <div class="container container-categorias">
-                <c:forEach items="${categorias}" var="categoria">
-                    <div class="categoria"><a href="./buscar-produtos?cat=${categoria.idCategoria}&busca=">${categoria.nome}</a></div>
-                </c:forEach>
-            </div>
-        </nav>
-        <nav class="navbar navbar-expand-lg bg-body">
-    <div class="container-fluid">
-        <input class="form-control me-2" name="busca" type="search" placeholder="Pesquisar" aria-label="Search">
-          <button class="pesquisa" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      <button
-        data-mdb-collapse-init
-        class="navbar-toggler"
-        type="button"
-        data-mdb-target="#navbarExample01"
-        aria-controls="navbarExample01"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarExample01">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" aria-current="page" href="./home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./buscar-produtos?cat=1&busca=">Descobrir</a>
-          </li>
-                 </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar -->
+ <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="logo"><img src="assets/logo.png" alt="png"></div>
+                <div class="carrinho"><a href="./carrinhos"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a></div>
+                <div class="perfil"><a href="./carrinhos"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a></div>
 
-  <!-- Jumbotron -->
-  
-  <!-- Jumbotron -->
-    </header>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <form class="d-flex" action="buscar-produtos" method="get">
+                    <input class="form-control me-2" name="busca" type="search" placeholder="Search" aria-label="Pesquisar" required>
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="./buscar-produtos?cat=1&busca=">Descobrir</a>
+
+                    <button class="btn btn-outline-success" type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                    </button>
+                </form>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-star" style="color: #ffffff;"></i>Destaques <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-laptop" style="color: #ffffff;"></i>Pc</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa-solid fa-ghost" style="color: #ffffff;"></i>Outros</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa-solid fa-gamepad" style="color: #ffffff;"></i>  Console
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">xbox</a>
+                                <a class="dropdown-item" href="#">playStation</a>
+                                <a class="dropdown-item" href="./Nintendos">Nintendo</a>
+
+                            </div>
+
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
         <main>
-       <div class="position-relative">
-    <div class="horizontal-scroll-container" id="carousel">
-        <div class="card card-custom">
-            <div class="card-body">
-                <div class="imagemProduto">
-                    <img src="assets/carrida.jpg" alt="opa">
-                    <p>Corrida</p>
+        <div class="position-relative">
+        <div class="horizontal-scroll-container" id="carousel">
+            <div class="card card-custom">
+                <div class="card-body">
+                    <div class="imagemProduto">
+                        <a href="https://example.com/corrida" target="_blank">
+                            <img src="assets/yasuke.jpeg" alt="Corrida">
+                        </a>
+                        <p>Corrida</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom">
+                <div class="card-body">
+                    <div class="imagemProduto">
+                        <a href="https://example.com/xbox" target="_blank">
+                            <img src="assets/mainicreft.jpg" alt="Xbox">
+                        </a>
+                        <p>Xbox</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom">
+                <div class="card-body">
+                    <div class="imagemProduto">
+                        <a href="https://example.com/playstation" target="_blank">
+                            <img src="assets/carro3.jpg" alt="PlayStation">
+                        </a>
+                        <p>PlayStation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom">
+                <div class="card-body">
+                    <div class="imagemProduto">
+                        <a href="https://example.com/nintendo" target="_blank">
+                            <img src="assets/marioj.jpg" alt="Nintendo">
+                        </a>
+                        <p>Nintendo</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card card-custom">
+                <div class="card-body">
+                    <div class="imagemProduto">
+                        <a href="https://example.com/name5" target="_blank">
+                            <img src="assets/carro3.jpg" alt="Name 5">
+                        </a>
+                        <p>Name 5</p>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card card-custom">
-            <div class="card-body">
-                <div class="imagemProduto">
-                    <img src="assets/mainicreft.jpg" alt="opa">
-                    <p>Xbox</p>
-                </div>
-            </div>
-        </div>
-        <div class="card card-custom">
-            <div class="card-body">
-                <div class="imagemProduto">
-                    <img src="assets/carro3.jpg" alt="opa">
-                    <p>PlayStation</p>
-                </div>
-            </div>
-        </div>
-        <div class="card card-custom">
-            <div class="card-body">
-                <div class="imagemProduto">
-                    <img src="assets/marioj.jpg" alt="opa">
-                    <p>Nintendo</p>
-                </div>
-            </div>
-        </div>
-        <div class="card card-custom">
-            <div class="card-body">
-                <div class="imagemProduto">
-                    <img src="assets/carro3.jpg" alt="opa">
-                    <p>Name 5</p>
-                </div>
-            </div>
-        </div>
+        <button id="scrollLeft" class="scroll-button"><i class="fas fa-chevron-left"></i></button>
+        <button id="scrollRight" class="scroll-button"><i class="fas fa-chevron-right"></i></button>
     </div>
-    <button id="scrollLeft" class="scroll-button"><i class="fa-solid fa-chevron-left"></i></button>
-    <button id="scrollRight" class="scroll-button"><i class="fa-solid fa-chevron-right"></i></button>
-</div>
 
             <div class="product-container">
                 <c:forEach var="produto" items="${produtos}">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 14rem;">
                         <div class="card-body">
                             <img src="${produto.imagem}" class="product-image" alt="${produto.nome}">
                             <h5 class="card-title">${produto.nome}</h5>

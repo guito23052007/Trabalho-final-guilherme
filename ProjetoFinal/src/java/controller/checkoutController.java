@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,22 +16,21 @@ import model.bean.Pagamento;
 import model.dao.CarrinhoDAO;
 import model.dao.PagamentoDAO;
 
+@WebServlet(urlPatterns = "/checkouto")
+@MultipartConfig
 public class checkoutController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         int userId = getIdUsuarioFromCookie(request);
         if (userId != -1) {
-            // Listar produtos do carrinho
             CarrinhoDAO carrinhoDAO = new CarrinhoDAO();
             List<Carrinho> carrinho = carrinhoDAO.leia(userId);
             request.setAttribute("carrinho", carrinho);
 
-            // Calcular total do carrinho
             List<Carrinho> totalPreco = carrinhoDAO.leiaTotal(userId);
             request.setAttribute("totalPreco", totalPreco);
 
-            // Encaminha para a página de checkout
             String nextPage = "/WEB-INF/jsp/checalt.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
@@ -42,26 +43,33 @@ public class checkoutController extends HttpServlet {
         processRequest(request, response);
     }
 
-    @Override 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        if (url.equals("/checkout")) {
-            Pagamento user = new Pagamento();
-            user.setNome_sobrenome(request.getParameter("nome"));
-            user.setTipo_pagamento(request.getParameter("senha"));
+        String url = request.getServletPath();
+        int idUsuario = getIdUsuarioFromCookie(request); // Obtém o ID do usuário do cookie
+
+        if (url.equals("/checkouto") && idUsuario != -1) {
+            Pagamento newPagamento = new Pagamento();
+            newPagamento.setId_usuario(idUsuario); // Define o ID do usuário
+
             
+            String nomeSobrenome = request.getParameter("nome_sobrenome");
+            String tipoPagamento = request.getParameter("tipo_pagamento");
 
-            PagamentoDAO userD = new PagamentoDAO();
-              userD.checalt(user);
+            newPagamento.setNome_sobrenome(nomeSobrenome);
+            newPagamento.setTipo_pagamento(tipoPagamento);
 
-        response.sendRedirect("./historicoPedidoUser");
-        } 
-        
+            PagamentoDAO pagamentoDAO = new PagamentoDAO();
+            pagamentoDAO.checalt(newPagamento); // Insere no banco de dados
+
+            response.sendRedirect("./historicoPedidoUser"); 
+        } else {
+            
+        }
     }
 
     private int getIdUsuarioFromCookie(HttpServletRequest request) {
-        int idUsuario = -1; // Valor padrão, caso não seja possível extrair o ID do usuário do cookie
+        int idUsuario = -1;
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
@@ -70,9 +78,9 @@ public class checkoutController extends HttpServlet {
                     try {
                         idUsuario = Integer.parseInt(cookieValue);
                     } catch (NumberFormatException e) {
-                        e.printStackTrace(); // ou outro tratamento de erro, se desejado
+                        e.printStackTrace();
                     }
-                    break; // Encerra o loop assim que encontrar o cookie desejado
+                    break;
                 }
             }
         }

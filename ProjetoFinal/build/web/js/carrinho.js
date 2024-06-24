@@ -7,7 +7,7 @@ document.querySelectorAll('.btn-comprar').forEach(btn => {
         var descricao = this.getAttribute('descricao');
         var quantidade = this.getAttribute('quantidade');
         
-        // Obter o ID do usuário do cookie (se existir)
+        // Obter o ID do usuário do cookie 
 
         // Crie um novo objeto FormData
         var formData = new FormData();

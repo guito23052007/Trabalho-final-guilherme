@@ -48,4 +48,5 @@ public class Pagamento {
     public void setTipo_pagamento(String tipo_pagamento) {
         this.tipo_pagamento = tipo_pagamento;
     }
+
 }

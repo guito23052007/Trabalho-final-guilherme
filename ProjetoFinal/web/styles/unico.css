@@ -35,13 +35,13 @@ header a {
 .container-fluid .pesquisa {
     margin-left: -2.1%;
     background-color: rgba(19, 19, 19, 0);
-    color: black;
+    color: white;
     border: none;
 }
 
 .container {
-    width: 1300px;;
-    height: 100vh;
+    width: 90%; /* Ajuste para responsividade */
+    max-width: 1300px;
     margin: auto;
     padding: 20px;
     display: flex;
@@ -51,33 +51,37 @@ header a {
     position: relative; /* Adicionado para o contexto de posicionamento da imagem de fundo */
 }
 
-.fund{
-    height: 93vh;
+.fund {
     width: 100%;
+    height: auto;
+    max-height: 86vh;
     background-size: cover;
     background-position: center;
-
+    opacity: 0.6;
 }
+
 .produto {
     background-color: #1c1c1cd9;
     padding: 20px;
     width: 100%;
-    height: 820px;;
+    max-width: 800px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
-    margin-top: -825px;
+    position: absolute;
+    top: 103px;
+    left: 1%;
 }
-
 .image-container {
     position: relative;
-    width: 600px; /* Define a largura fixa */
-    height: 300px; /* Define a altura fixa */
+    width: 100%;
+    height: auto;
 }
 
 .main-image {
-    width: 800px;
-    object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
-    margin-top: -150px;
+    width: 100%;
+    max-width: 800px; /* Ajuste para responsividade */
+    object-fit: cover;
+    margin-top: 20px; /* Ajuste para evitar sobreposição */
 }
 
 .thumbnails {
@@ -85,18 +89,21 @@ header a {
     justify-content: center;
     margin-top: 10px;
     width: 100%;
-    height: 100px; /* Define uma altura menor para as miniaturas */
+    height: auto;
+    margin-left: -14%;
 }
-
 .imagemP img {
-    margin-left: 850px;
-    width: 380px;
-    height: 151px;
-    margin-top: 128px;
+    position: absolute;
+    left: 138%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    top: 19px;
 }
 .thumbnail {
-    width: 112px;
-    height: 65px; 
+    width: 100px; /* Ajuste para responsividade */
+    height: 60px; /* Ajuste para responsividade */
     cursor: pointer;
     margin: 0 5px;
     object-fit: cover; /* Mantém a proporção da imagem e corta o excesso */
@@ -111,8 +118,9 @@ header a {
     font-size: 2em;
     color: white;
     position: absolute;
-    top: 114px;
+    top: -63px;
 }
+
 .price {
     font-size: 1.5em;
     color: #00b894;
@@ -121,31 +129,36 @@ header a {
 .description {
     margin: 20px 0;
 }
-
-
 .valor {
-     margin-top: 170px;
-     margin-left: 970px;
+    margin-top: 50px;
+    font-size: 25px;
+    position: absolute;
+    right: -27%;
+    top: 78%;
+    transform: translateY(-50%);
 }
 p {
-    position: absolute;
-        color: white;
-
+    color: white;
 }
- 
+
 .description iframe {
     width: 100%;
     height: 315px;
     border-radius: 10px;
 }
+
 #preco {
-    margin-top: -15px;
-    margin-left: 851px;
-    width: 376px;
+    margin-top: -315px;
+    width: 100%;
+    max-width: 376px;
     font-size: 15px;
+    position: absolute;
+    left: 133%;
+    transform: translateX(-50%);
 }
+
 .btn-comprar {
-    background-color: #007bff;
+    background-color: green;
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -156,9 +169,12 @@ p {
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s;
-    margin-top: 232px;
-    margin-left: 72%;
-    width: 300px;
+    margin-top: -21px;
+    width: 80%;
+    max-width: 300px;
+    position: absolute;
+    left: 134%;
+    transform: translateX(-50%);
 }
 
 .btn-comprar i {
@@ -166,48 +182,321 @@ p {
 }
 
 .btn-comprar:hover {
-    background-color: green;
+    background-color: red;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .container {
-        padding: 10px;
-    }
 
+@media (max-width: 1399px) {
     .produto {
-        padding: 10px;
+        background-color: #1c1c1cd9;
+        padding: 20px;
+        width: 100%;
+        max-width: 706px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        position: absolute;
+        top: 103px;
+        left: 1%;
     }
-
-    .produto h2 {
-        font-size: 1.5em;
+    .imagemP img {
+        position: absolute;
+        left: 131%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 306px;
+        height: auto;
+        top: -19px;
     }
-
-    .price {
-        font-size: 1.2em;
+    #preco {
+        margin-top: -315px;
+        width: 100%;
+        max-width: 308px;
+        font-size: 15px;
+        position: absolute;
+        left: 127%;
+        transform: translateX(-50%);
     }
-
+    #preco {
+        margin-top: -315px;
+        width: 100%;
+        max-width: 308px;
+        font-size: 15px;
+        position: absolute;
+        left: 127%;
+        transform: translateX(-50%);
+    }
     .btn-comprar {
-        padding: 8px 16px;
-        font-size: 0.9em;
+        background-color: green;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        margin-top: -21px;
+        width: 80%;
+        max-width: 259px;
+        position: absolute;
+        left: 126%;
+        transform: translateX(-50%);
     }
-
-    .image-container {
-        width: 100%;
-        height: auto;
-    }
-
-    .main-image {
-        width: 100%;
-        height: auto;
-    }
-
     .thumbnails {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%;
         height: auto;
+        margin-left: -9%;
     }
+}
 
+@media (max-width: 1199px) {
+    .fund {
+        width: 106%;
+        height: 613px;
+        max-height: 86vh;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+    }
+    .produto {
+        background-color: #1c1c1cd9;
+        padding: 17px;
+        width: 100%;
+        max-width: 63%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        position: absolute;
+        top: 36px;
+        left: 1%;
+    }
+    .produto h2 {
+    margin: 0;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    top: -7px;
+}
+    .imagemP img {
+        position: absolute;
+        left: 131%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 306px;
+        height: auto;
+        top: -19px;
+    }
+    #preco {
+        margin-top: -282px;
+        width: 100%;
+        max-width: 306px;
+        font-size: 13px;
+        position: absolute;
+        left: 127%;
+        transform: translateX(-50%);
+    }
+    .valor {
+        margin-top: 50px;
+        font-size: 25px;
+        position: absolute;
+        right: -27%;
+        top: 78%;
+        transform: translateY(-50%);
+    }
+    .btn-comprar {
+        background-color: green;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        margin-top: -21px;
+        width: 80%;
+        max-width: 259px;
+        position: absolute;
+        left: 126%;
+        transform: translateX(-50%);
+    }
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        width: 100%;
+        height: auto;
+        margin-left: 0%;
+    }
+}
+
+
+@media (max-width: 1000px) {
+    .fund {
+        width: 114%;
+        height: 613px;
+        max-height: 86vh;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+    }
+    .produto {
+        background-color: #1c1c1cd9;
+        padding: 17px;
+        width: 100%;
+        max-width: 68%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        position: absolute;
+        top: 36px;
+        left: -4%;
+    }
+    .imagemP img {
+        position: absolute;
+        left: 136%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        top: -19px;
+    }
+    #preco {
+        margin-top: -244px;
+        width: 100%;
+        max-width: 266px;
+        font-size: 12px;
+        position: absolute;
+        left: 129%;
+        transform: translateX(-50%);
+    }
+    .valor {
+        margin-top: 50px;
+        font-size: 25px;
+        position: absolute;
+        right: -27%;
+        top: 72%;
+        transform: translateY(-50%);
+    }
+    .btn-comprar {
+        background-color: green;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        margin-top: -21px;
+        width: 80%;
+        max-width: 259px;
+        position: absolute;
+        left: 128%;
+        transform: translateX(-50%);
+    }.thumbnail {
+        width: 79px;
+        height: 60px;
+        cursor: pointer;
+        margin: 0 5px;
+        object-fit: cover;
+    }
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        width: 95%;
+        height: auto;
+        margin-left: 4%;
+    }
+}
+
+@media (max-width: 795px) {
+   .fund {
+        width: 103%;
+        height: 774px;
+        max-height: 86vh;
+        background-size: cover;
+        background-position: center;
+        opacity: 0.6;
+    }
+        .produto {
+        background-color: #1c1c1cd9;
+        padding: 17px;
+        width: 100%;
+        max-width: 100%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        position: absolute;
+        top: 178px;
+        left: -4%;
+    }
+    .imagemP img {
+        position: absolute;
+        left: 29%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 179px;
+        height: auto;
+        top: -118px;
+    }
+          #preco {
+        margin-top: 27px;
+        width: 100%;
+        max-width: 434px;
+        font-size: 12px;
+        position: absolute;
+        left: 53%;
+        transform: translateX(-50%);
+    }
+    .valor {
+        margin-top: 50px;
+        font-size: 25px;
+        position: absolute;
+        right: 44%;
+        top: 122%;
+        transform: translateY(-50%);
+    }
+    
+           .btn-comprar {
+        background-color: green;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+        margin-top: 172px;
+        width: 80%;
+        max-width: 259px;
+        position: absolute;
+        left: 48%;
+        transform: translateX(-50%);
+    }
     .thumbnail {
-        width: 70px;
-        height: 70px;
+        width: 79px;
+        height: 60px;
+        cursor: pointer;
+        margin: 0 5px;
+        object-fit: cover;
+    }
+  .thumbnails {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        width: 95%;
+        height: auto;
+        margin-left: 4%;
     }
 }
